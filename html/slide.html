@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, user-scalable=no ,initial-scale=1,maximum-scale=1.0,minimum-scale=1.0">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        #slide{
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+    </style>
+    <title>Title</title>
+</head>
+<body>
+    <div id="slide">
+        <div class="slide-page" style="background-color: #234767">
+            <div style="width: 200px;height: 100px;background-color: #dfe233;"></div>
+        </div>
+        <div class="slide-page" style="background-color: #322454">2</div>
+        <div class="slide-page" style="background-color: #4df3e2">3</div>
+        <div class="slide-page" style="background-color: #dfe233">4</div>
+        <div class="slide-page" style="background-color: #645723">5</div>
+    </div>
+    <input type="button" value="last" onclick="last()">
+    <input type="button" value="next" onclick="next()">
+    <script src="slide.js"></script>
+    <script>
+        let a = new Slide('slide')
+        a.initSlide()
+        function last(){
+            a.last()
+        }
+        function next(){
+            a.next()
+        }
+    </script>
+</body>
+</html>
