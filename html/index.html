@@ -1,0 +1,49 @@
+<html>
+<head>
+    <script src="https://vuejs.org/js/vue.min.js"></script>
+    <!-- import stylesheet -->
+    <link rel="stylesheet" href="https://unpkg.com/iview/dist/styles/iview.css">
+    <!-- import iView -->
+    <script src="https://unpkg.com/iview/dist/iview.min.js"></script>
+</head>
+<body>
+<div id="app">
+</div>
+<script>
+    var Main = {
+        data () {
+            return {
+                phone: {},
+            }
+        },
+        render: function(h){
+            this.phone['aa'] = 'apple'
+            return h('radio-group', {
+                props: {
+                    value: this.phone.aa,
+                },
+                on: {
+                    'on-change': (value) => {
+                        this.phone.aa = value
+                    }
+                }
+            }, [
+                h('radio', {
+                    props: {
+                        label: 'apple'
+                    },
+                }),
+                h('radio', {
+                    props: {
+                        label: 'windows'
+                    },
+                }),
+            ])
+        }
+    }
+
+    var Component = Vue.extend(Main)
+    new Component().$mount('#app')
+</script>
+</body>
+</html>
